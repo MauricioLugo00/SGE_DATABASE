@@ -1,0 +1,84 @@
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Estilo global */
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f8f9fa; /* Color claro de fondo */
+    color: #333; /* Texto oscuro */
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Contenedor principal */
+  .container {
+    max-width: 600px;
+    margin: 2rem auto; /* Centrar vertical y horizontal */
+    padding: 1.5rem;
+    background: #fff; /* Fondo blanco */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd;
+  }
+  
+  /* Títulos */
+  h1 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #dc3545; /* Rojo de alerta */
+    text-align: center;
+  }
+  
+  /* Párrafos */
+  p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+  
+  /* Botones */
+  button,
+  a {
+    display: inline-block;
+    padding: 0.8rem 1.2rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .btn-danger {
+    background-color: #dc3545; /* Rojo */
+    color: #fff;
+  }
+  
+  .btn-danger:hover {
+    background-color: #c82333; /* Rojo más oscuro */
+  }
+  
+  .btn-secondary {
+    background-color: #6c757d; /* Gris */
+    color: #fff;
+  }
+  
+  .btn-secondary:hover {
+    background-color: #5a6268; /* Gris más oscuro */
+  }
+  
+  /* Estilo del formulario */
+  form {
+    display: flex;
+    justify-content: center;
+    gap: 1rem; /* Separación entre botones */
+  }
+  
+  
