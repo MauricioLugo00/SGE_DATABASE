@@ -20,6 +20,9 @@ INSTALLED_APPS = [
     'teachers',
     'courses',
     'enrollments',
+
+
+    
 ]
 
 

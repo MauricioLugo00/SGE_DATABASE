@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1 class="mb-4">Listado de Profesores</h1>
+    <a href="{% url 'teacher-create' %}" class="btn btn-primary mb-3">Crear Nuevo Profesor</a>
+    
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Email</th>
+                <th>Especialización</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for teacher in teachers %}
+            <tr>
+                <td>{{ teacher.first_name }}</td>
+                <td>{{ teacher.last_name }}</td>
+                <td>{{ teacher.email }}</td>
+                <td>{{ teacher.specialization }}</td>
+                <td>
+                    <a href="{% url 'teacher-update' teacher.pk %}" class="btn btn-sm btn-warning">Editar</a>
+                    <a href="{% url 'teacher-delete' teacher.pk %}" class="btn btn-sm btn-danger">Eliminar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

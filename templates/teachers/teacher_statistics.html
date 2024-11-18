@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1>Estadísticas de Profesores por Especialización</h1>
+    
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Especialización</th>
+                <th>Número de Profesores</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for spec in teachers_by_specialization %}
+            <tr>
+                <td>{{ spec.specialization }}</td>
+                <td>{{ spec.total }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

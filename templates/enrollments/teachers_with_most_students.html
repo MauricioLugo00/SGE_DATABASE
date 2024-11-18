@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1>Profesores con Más Estudiantes</h1>
+    
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Profesor</th>
+                <th>Total de Estudiantes</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for teacher in teachers %}
+            <tr>
+                <td>{{ teacher.first_name }} {{ teacher.last_name }}</td>
+                <td>{{ teacher.total_students }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

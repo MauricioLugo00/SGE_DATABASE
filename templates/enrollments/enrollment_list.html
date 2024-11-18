@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1 class="mb-4">Listado de Matrículas</h1>
+    <a href="{% url 'enrollment-create' %}" class="btn btn-primary mb-3">Crear Nueva Matrícula</a>
+    
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Estudiante</th>
+                <th>Curso</th>
+                <th>Fecha de Matrícula</th>
+                <th>Estado</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for enrollment in enrollments %}
+            <tr>
+                <td>{{ enrollment.student }}</td>
+                <td>{{ enrollment.course }}</td>
+                <td>{{ enrollment.enrollment_date }}</td>
+                <td>{{ enrollment.get_status_display }}</td>
+                <td>
+                    <a href="{% url 'enrollment-update' enrollment.pk %}" class="btn btn-sm btn-warning">Editar</a>
+                    <a href="{% url 'enrollment-delete' enrollment.pk %}" class="btn btn-sm btn-danger">Eliminar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <div class="card mt-4">
+        <div class="card-header">Matrículas por Curso</div>
+        <div class="card-body">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Curso</th>
+                        <th>Total de Matrículas</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for enrollment_course in enrollments_by_course %}
+                    <tr>
+                        <td>{{ enrollment_course.course__course_name }}</td>
+                        <td>{{ enrollment_course.total }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

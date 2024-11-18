@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1>Estadísticas de Cursos</h1>
+    
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Curso</th>
+                <th>Código</th>
+                <th>Total de Estudiantes</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for course in courses_with_enrollment %}
+            <tr>
+                <td>{{ course.course_name }}</td>
+                <td>{{ course.course_code }}</td>
+                <td>{{ course.total_students }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
